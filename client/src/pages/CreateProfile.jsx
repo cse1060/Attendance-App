@@ -28,7 +28,7 @@ export default function CreateProfile() {
 
   useEffect(() => {
     verifyUser();
-  })
+  }, [])
 
   var imgUrl = "";
   const [user, setUser] = useState(null);
@@ -36,7 +36,7 @@ export default function CreateProfile() {
   async function submitProfile(event) {
     event.preventDefault()
     // console.log(imgUrl , "image url ****")
-    const data = await axios.post("http://127.0.0.1:8000/create_profile/", { user: userForm, img: imgUrl });
+    const data = await axios.post(`http://127.0.0.1:8000/create_profile/${user}/`, { user: userForm, img: imgUrl });
     Cookies.set("usertype", userForm.userType, { expires: 1 })
     console.log(data.data);
     navigate(`/profile/${user}`)

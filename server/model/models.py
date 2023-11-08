@@ -7,7 +7,7 @@ class Tokens(models.Model):
     username = models.CharField(max_length=256)
     token = models.CharField(max_length=256)
 
-    def _str_(self):
+    def str(self):
         return f"username : {self.username}, token : {self.token}"
 
 
@@ -34,7 +34,7 @@ class UserProfile(models.Model):
 
 class StudentData(models.Model):
     username = models.CharField(max_length=256)
-    institute = models.CharField(max_length=256)
+    institute = models.CharField(max_length=256, null=True)
     rollno = models.CharField(max_length=9)
     image_urls = models.JSONField(default=f3)
     year = models.IntegerField()
@@ -42,10 +42,10 @@ class StudentData(models.Model):
 
 
 class Classes(models.Model):
-    class_id = models.CharField(max_length=10)
+    class_id = models.CharField(max_length=256)
     Owner_username = models.CharField(max_length=256)
     name = models.CharField(max_length=256)
-    description = models.CharField(max_length=512)
-    students = models.JSONField(default=f2)
-    join_token = models.CharField(max_length=256)
-    join_password = models.CharField(max_length=256)
+    description = models.CharField(max_length=512, null=True)
+    students = models.JSONField(default=f2, null=True)
+    join_token = models.CharField(max_length=256, null=True)
+    join_password = models.CharField(max_length=256,null=True)

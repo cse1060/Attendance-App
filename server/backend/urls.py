@@ -11,6 +11,7 @@ urlpatterns = [
     path('verifyuser/', views.verify_user),
     path('create_profile/<str:slug>/', views.create_profile),
     path('take_attendance/', views.take_attendance),
+    path('create_class/', views.create_class),
     path('get_user/<str:slug>/', views.get_user),
 ]
 

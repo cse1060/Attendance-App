@@ -142,25 +142,62 @@ def get_user(request, slug):
     if request.method == "GET":
         User = UserProfile.objects.filter(username=slug)
         serializer = UserProfileSerializer(User[0])
-        print(serializer.data, "***")
+        print(serializer.data)
         return (JsonResponse({"user": serializer.data}))
 
 
 @csrf_protect
 @api_view(['POST'])
 def create_class(request):
+    # request => {
+    #     "owner": ----,       => username
+    #     "name":----,         => classname
+    # }
+
     if request.method == "POST":
-        details = request.body
+        details = request.data
 
         # check if the given class is new or not
         classRoom = Classes.objects.filter(
-            Owner_username=details["owner"], name=details["name"])
+            Owner_username=details["owner"], name=details["name"]
+        )
+
         if (len(classRoom) > 0):
-            return (JsonResponse({"success": False, "message": "The classroom already exists, changee the classroom name"}))
+            return JsonResponse(
+                {
+                    "success": False,
+                    "message": "The classroom already exists, changee the classroom name"
+                }
+            )
         # Set a class_id accordingly --- sam
         else:
+            owner = details['owner']
+            owner_id = UserProfile.objects.filter(username=owner)[0].id
+            owned_classes = Classes.objects.filter(Owner_username=owner)
+            class_ID = ("000"+str(owner_id))[-4:] + \
+                ("000"+str(len(owned_classes)+1))[-4:]
+
             Classes.objects.create(
-                Owner_username=details["owner"], name=details["name"], description=details["description"])
-            return (JsonResponse({"success": True, "message": "Class created successfully"}))
+                class_id=class_ID,
+                Owner_username=owner,
+                name=details["name"],
+                description=details["description"],
+                join_password=details["classPassword"]
+            )
+
+            userp = UserProfile.objects.filter(username=owner)[0]
+            userp.classes['classes'].append(class_ID)
+            userp.save()
+
+            return JsonResponse(
+                {
+                    "success": True,
+                    "message": "Class created successfully"
+                }
+            )
     else:
-        return (JsonResponse({"success": True}))
+        return JsonResponse(
+            {
+                "success": True
+            }
+        )
