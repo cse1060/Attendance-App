@@ -1,5 +1,5 @@
 import './App.css';
-import Login from './components/Login.jsx'import Home from './pages/Home.tsx';
+import Home from './pages/Home.tsx';
 import Login from './pages/Login.tsx';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
 import Signup from './pages/Signup.tsx';
