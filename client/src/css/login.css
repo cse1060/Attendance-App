@@ -1,3 +1,6 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&family=Montserrat:wght@200&display=swap');
+
 *,
 *:before,
 *:after {
@@ -8,6 +11,8 @@
 
 body {
     background-color: #080710;
+    font-family: 'Kanit', sans-serif;
+font-family: 'Montserrat', sans-serif;
 }
 
 .background {

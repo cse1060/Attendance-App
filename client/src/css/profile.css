@@ -1,0 +1,75 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #24292e;
+    color: #fff;
+    padding: 10px;
+    text-align: right;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.github-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.github-button {
+    display: inline-block;
+    margin: 10px 0;
+    font-size: 16px;
+    width: 15rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid #24292e;
+    color: #fff;
+    background-color: #28a745;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+.buton{
+    width: 20%;
+    margin: 1rem;
+}
+.Profile{
+    height:25rem;
+    border-radius: 12.5rem;
+}
+.head{
+    color: rgb(127, 164, 232);
+}
+.github-button:hover {
+    background-color: #218838;
+}
+.flex-container{
+    display: flex;;
+    opacity: 1;
+    align-items: center;
+    border-radius: 2rem;
+    background-color: inherit;
+    justify-content: space-around;
+}
+@media screen and (max-width: 600px) {
+    .github-buttons {
+        flex-direction: column;
+    }
+
+    main {
+        padding: 10px;
+    }
+}

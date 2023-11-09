@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/signup.css";
+import "../styles/Login.css";
 export default function Signup() {
   const [form, setForm] = useState({
     username: "",
@@ -25,14 +26,14 @@ export default function Signup() {
       </div>
       <div className="form">
         <form method="POST" onSubmit={printValue}>
-          <h3>Login Here</h3>
+          <h3>Sign up Here</h3>
 
           <label htmlFor="username">Username</label>
           <input
             type="text"
             onChange={updateValue}
             value={form.username}
-            placeholder="Email or Phone"
+            placeholder="Username"
             required={true}
             name="username"
             id="username"
@@ -52,14 +53,9 @@ export default function Signup() {
           <button type="submit" className="btn btn-primary btn-block btn-large">
             Submit
           </button>
-          <div className="social">
-            <div className="go">
-              <i className="fab fa-google"></i> Google
-            </div>
-            <div className="fb">
-              <i className="fab fa-facebook"></i> Facebook
-            </div>
-          </div>
+          <br />
+          <h5 >Already have a Account?<a href="/login">Login</a></h5>
+          
         </form>
       </div>
     </div>

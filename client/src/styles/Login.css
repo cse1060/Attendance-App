@@ -1,4 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&family=Montserrat:wght@200&display=swap');
+
 .btn {
   display: inline-block;
   *display: inline;
@@ -76,7 +78,7 @@
   color: rgba(255, 255, 255, 0.75);
 }
 .btn-primary {
-  background-color: #4a77d4;
+  background-color: rgb(74, 157, 212);
   background-image: -moz-linear-gradient(top, #6eb6de, #4a77d4);
   background-image: -ms-linear-gradient(top, #6eb6de, #4a77d4);
   background-image: -webkit-gradient(
@@ -126,7 +128,9 @@ html {
 body {
   width: 100%;
   height: 100%;
-  font-family: "Open Sans", sans-serif;
+  
+  font-family: 'Kanit', sans-serif;
+font-family: 'Montserrat', sans-serif;
   background: #092756;
   background: -moz-radial-gradient(
       0% 100%,
