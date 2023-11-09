@@ -1,21 +1,45 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/signup.css";
 import { useNavigate } from "react-router-dom";
 import "../styles/Login.css";
 import axios from "axios"
+import middleware from "../middleware/middleware"
+
 export default function Signup() {
+
+  const [error, setError] = useState("")
+
   const [form, setForm] = useState({
     username: "",
     password: "",
     email: ""
   });
 
+  async function verifyUser() {
+    const res = await middleware();
+    console.log(res);
+
+    if (res === false) {
+      navigate("/profile")
+    }
+  }
+
+  useEffect(() => {
+    verifyUser();
+  }, [])
+
   const navigate = useNavigate();
   const submit = async () => {
 
-    const data = await axios.post("loca")
+    const data = await axios.post("http://127.0.0.1:8000/signup/", form)
 
-    navigate("/login")
+    console.log(data.data);
+
+    if (data.data.success === true) {
+      navigate("/login")
+    } else {
+      setError(data.data.message)
+    }
     // console.log(form);
 
   }
@@ -29,6 +53,12 @@ export default function Signup() {
   function printValue(e) {
     e.preventDefault();
     console.log(JSON.stringify(form));
+  }
+
+  if (error.length > 0) {
+    return (
+      <h1>{error}</h1>
+    )
   }
   // console.log("()",form);
   return (

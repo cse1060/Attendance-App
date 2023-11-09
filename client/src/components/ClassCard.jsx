@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ClasssCard() {
+export default function ClassCard() {
     return (
         <div>
             <div className="wrap animate pop classcard">
