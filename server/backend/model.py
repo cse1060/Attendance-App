@@ -2,8 +2,9 @@ import os
 import pickle
 import datetime
 import hashlib
+from .settings import BASE_DIR
 
-db_path = r'server\database\users\database.pkl'
+db_path = os.path.join(BASE_DIR, r'database/users/database.pkl')
 
 
 class Class:
@@ -29,6 +30,12 @@ class Class:
         res = f"""{self.__repr__()}\nName: {self.class_name}\nTeacher: {self.teacher_name} ({self.teacher_username})\nStrength: {self.strength}\nStudents: {" ".join(self.student_list) if self.strength<=3 else f"{self.student_list[0]} {self.student_list[1]} ..... {self.student_list[-1]}"}"""
 
         return res
+
+    def __getstate__(self):
+        d = dict(self.__dict__)
+        d['attendance_data'] = self.attendance_data
+        d['attendance_template'] = self.attendance_template
+        return d
 
     def mark_attendance(self, date, attendance):
         error_message = {
@@ -92,26 +99,27 @@ class User:
     fullname = None
     password = None
     classes = dict()
-    path = None
 
     def __init__(self, username: str, fullname: str, password: str):
-
         with open(db_path, 'rb') as file:
             d = pickle.load(file)
             if (d.get(username) != None):
                 print("User already exists")
-                return
+                return None
 
         self.username = username
         self.fullname = fullname
         self.password = hashlib.sha256(
             bytes(password, "utf-8")
-        ).digest()
-
-        self.save()
+        ).hexdigest()
 
     def __str__(self):
-        return f"{self.username}"
+        return f"<User: {self.username}>"
+
+    def __getstate__(self):
+        d = dict(self.__dict__)
+        d['classes'] = self.classes
+        return d
 
     def add_class(self, classname: str, student_list: list[str]):
         self.classes[classname] = Class(
@@ -119,13 +127,13 @@ class User:
         )
 
     def save(self):
-        user_dict = None
+        db = None
 
         # print(os.listdir(os.curdir))
         with open(db_path, 'rb') as file:
-            user_dict = pickle.load(file)
+            db = pickle.load(file)
 
-        user_dict[self.username] = self
+        db[self.username] = self
 
         with open(db_path, 'wb') as file:
-            pickle.dump(user_dict, file)
+            pickle.dump(db, file)

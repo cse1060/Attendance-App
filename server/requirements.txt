@@ -1,0 +1,4 @@
+pickle
+django
+djangorestframework
+djangocorsheaders
