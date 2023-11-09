@@ -1,27 +1,55 @@
-import React from 'react'
-
-export default function Login() {
-    return (
-        <div>
-            <div className="background">
-                <div className="shape"></div>
-                <div className="shape"></div>
-            </div>
-            <div className='form'>
-                <h3>Login Here</h3>
-
-                <label htmlFor="username">Username</label>
-                <input type="text" placeholder="Email or Phone" id="username" />
-
-                <label htmlFor="password">Password</label>
-                <input type="password" placeholder="Password" id="password" />
-
-                <button>Log In</button>
-                <div className="social">
-                    <div className="go"><i className="fab fa-google"></i>  Google</div>
-                    <div className="fb"><i className="fab fa-facebook"></i>  Facebook</div>
-                </div>
-            </div>
+import React, { useState } from "react";
+import { ReactDOM } from "react";
+import "../styles/Login.css";
+function Login() {
+  const [form, setForm] = useState({
+    name: "",
+    password: "",
+  });
+  function updateValue(e) {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  }
+  function printValue(e) {
+    e.preventDefault();
+    console.log(JSON.stringify(form));
+  }
+  return (
+    <>
+      <div>
+        <div className="login">
+          <h1>Login</h1>
+          <form method="post" onSubmit={printValue}>
+            <input
+              placeholder="Name"
+              value={form.name}
+              type="text"
+              onChange={updateValue}
+              required={true}
+              name="name"
+            />
+            <input
+              placeholder="Password"
+              value={form.password}
+              onChange={updateValue}
+              required={true}
+              type="password"
+              name="password"
+            />
+            <button
+              type="submit"
+              className="btn btn-primary btn-block btn-large"
+            >
+              Submit
+            </button>
+          </form>
+          {/* <h4 className>Already Have a account<Link></Link></h4> */}
         </div>
-    )
+      </div>
+    </>
+  );
 }
+
+export default Login;

@@ -1,4 +1,5 @@
 import React from 'react'
+import "../css/classCard.css"
 
 export default function Navbar() {
     return (

@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar.tsx'
 import "../css/home.css"
 
 import { TypeAnimation } from 'react-type-animation';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
     const particlesInit = useCallback(async engine => {
@@ -37,7 +38,7 @@ export default function Home() {
                     repeat={Infinity}
                 />
                 <br />
-                <button className='btn'>Get Started</button>
+                <button className='btn'> <Link to="/login">Get Started</Link></button>
             </div>
             <Particles
                 className="particles"
