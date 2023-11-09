@@ -1,3 +1,4 @@
 .nav {
-    background-color: #030019
+    background-color: #030019;
+    z-index: 1000;
 }

@@ -23,6 +23,6 @@ export default function Signup() {
                     <div className="fb"><i className="fab fa-facebook"></i>  Facebook</div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }

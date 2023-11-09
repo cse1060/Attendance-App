@@ -1,0 +1,40 @@
+.particles {
+    z-index: -1;
+    position: relative;
+}
+
+.home_header {
+    position: fixed;
+    top: 40%;
+    margin: 0 auto;
+    text-align: center;
+    width: 100vw;
+}
+
+.home_header>h1 {
+    font-family: 'Raleway';
+    font-size: 4em;
+    font-weight: bolder;
+    color: rgb(23, 26, 30);
+    transition: 500ms ease-in-out;
+}
+
+.home_header>h1:hover {
+    transform: scale(1.2);
+    text-shadow: 0px 0px 50px rgb(255, 255, 255);
+}
+
+.home_header>.btn {
+    margin-top: 20px;
+    background-color: rgb(212, 215, 217);
+    border: 3px rgb(23, 26, 30) solid;
+    border-radius: 20px;
+    color: rgb(23, 26, 30);
+    font-weight: bolder;
+    transition: 500ms ease-in-out;
+}
+
+.home_header>.btn:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 30px white;
+}
