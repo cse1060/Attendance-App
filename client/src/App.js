@@ -1,8 +1,8 @@
 import './App.css';
 import Home from './pages/Home.js';
-import Login from './pages/Login.tsx';
+import Login from './pages/Login.jsx';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
-import Signup from './pages/Signup.tsx';
+import Signup from './pages/Signup.jsx';
 import Profile from './pages/Profile.jsx';
 import TakeAttendance from './pages/TakeAttendance.jsx';
 function App() {

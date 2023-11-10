@@ -10,6 +10,8 @@ from random import randint
 import hashlib
 from PIL import Image
 from rest_framework.parsers import MultiPartParser, FormParser
+import cv2
+import matplotlib.pyplot as plt
 
 db_path = os.path.join(BASE_DIR, r'database\users\database.pkl')
 db = None
@@ -234,8 +236,7 @@ def save(new_db):
 def take_attendance(request):
     file_obj = request.data['image']
     # print(request.data['image'])
+    print(type(file_obj))
     img = Image.open(file_obj)
-    img.show()
-    print(request.data)
-    print(file_obj)
+    img.save("../result.png")
     return JsonResponse({"success": True})
