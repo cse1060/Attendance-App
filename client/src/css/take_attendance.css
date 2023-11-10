@@ -122,6 +122,46 @@ body {
     position: absolute;
     left: 0;
     width: 70%;
-    height: 100%;
+    min-height: 100%;
     top: 55px;
+    color: white;
+}
+
+.line-att {
+    color: white;
+    background-color: white;
+    box-shadow: 5px 5px 20px white;
+}
+
+.img_checked {
+    width: 50%;
+    margin-left: 25%;
+    display: block;
+}
+
+.download {
+    display: block;
+    position: relative;
+    background-color: rgb(252, 253, 254);
+    color: rgb(23, 26, 30);
+    margin: 10px auto;
+    padding: 10px;
+    /* padding-left: 15px;
+    padding-right: 15px; */
+    font-weight: bolder;
+    width: 20%;
+    text-align: center;
+    margin: 20px auto;
+    border: 3px rgb(0, 0, 0) solid;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.table_heading {
+    margin: 5px 15px;
+}
+
+.contain {
+    width: 50%;
+    margin: 0 auto;
 }
