@@ -1,0 +1,112 @@
+# Face Recognition Application Documentation
+
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Technology Stack](#technology-stack)
+4. [Setup Instructions](#setup-instructions)
+5. [Usage](#usage)
+6. [Contributors](#contributors)
+7. [Acknowledgments](#acknowledgments)
+8. [License](#license)
+
+## 1. Introduction <a name="introduction"></a>
+
+The Face Recognition Application is a web-based system designed to process class image files uploaded by users. The system utilizes the InsightFace model for face detection and recognition. React serves as the frontend framework, providing a user-friendly interface, while Django handles the backend operations, including user authentication and interaction with the face detection model.
+
+## 2. Features <a name="features"></a>
+
+- **Image Upload:** Users can upload class image files to the website.
+- **Face Detection:** Utilizes the InsightFace model for accurate face detection in uploaded images.
+- **Face Recognition:** Compares detected faces with known faces stored in the model.
+- **Login/Logout Functionality:** Implements a secure user authentication system with login and logout functionality.
+
+## 3. Technology Stack <a name="technology-stack"></a>
+
+- **Frontend Framework:** React
+- **Backend Framework:** Django
+- **Face Detection Model:** InsightFace
+
+## 4. Setup Instructions <a name="setup-instructions"></a>
+
+### 4.1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/face-recognition-app.git
+```
+
+### 4.2. Navigate to the Backend Directory
+
+```bash
+cd face-recognition-app/backend
+```
+
+### 4.3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4.4. Run Migrations
+
+```bash
+python manage.py migrate
+```
+
+### 4.5. Start the Django Development Server
+
+```bash
+python manage.py runserver
+```
+
+### 4.6. Navigate to the Frontend Directory
+
+```bash
+cd ../frontend
+```
+
+### 4.7. Install Node Modules
+
+```bash
+npm install
+```
+
+### 4.8. Start the React Development Server
+
+```bash
+npm start
+```
+
+### 4.9. Access the Application
+
+Open your browser and go to `http://localhost:3000` to access the Face Recognition Application.
+
+## 5. Usage <a name="usage"></a>
+
+1. **Login:**
+   Use the provided login functionality to access the application.
+
+2. **Upload Image:**
+   Upload class image files through the website interface.
+
+3. **View Results:**
+   The application will display the results of face detection and recognition.
+
+4. **Logout:**
+   Logout from the application when done.
+
+## 6. Contributors <a name="contributors"></a>
+
+- [Your Name]
+- [Contributor 1]
+- [Contributor 2]
+
+## 7. Acknowledgments <a name="acknowledgments"></a>
+
+- InsightFace for providing the face detection model.
+- The Django and React communities for their excellent frameworks.
+
+## 8. License <a name="license"></a>
+
+This project is licensed under the [MIT License](LICENSE).

@@ -215,7 +215,7 @@ export default function TakeAttendance() {
                                 value: "#ffffff",
                                 animation: {
                                     enable: true,
-                                    speed: 20,
+                                    speed: 1,
                                     sync: true,
                                 },
                             },

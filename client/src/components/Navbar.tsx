@@ -1,8 +1,10 @@
 import React from 'react'
 import "../css/classCard.css"
 import Cookies from 'js-cookie'
+import { useNavigate } from 'react-router-dom'
 
 export default function Navbar() {
+    const navigate = useNavigate
     return (
         <div>
             <nav className="navbar navbar-expand-lg  bg-dark" data-bs-theme="dark">
@@ -14,19 +16,19 @@ export default function Navbar() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Home</a>
+                                <a className="nav-link active" aria-current="page" href="/">Home</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link active" href="#">Profile</a>
+                                <a className="nav-link active" href="/profile">Profile</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link active" href="#">Take Attendance</a>
+                                <a className="nav-link active" href="/take_attendance">Take Attendance</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link active" onClick={() => {
                                     Cookies.remove("token")
                                     Cookies.remove("username")
-                                }} href="#">Logout</a>
+                                }} href="/login">Logout</a>
                             </li>
 
                         </ul>
