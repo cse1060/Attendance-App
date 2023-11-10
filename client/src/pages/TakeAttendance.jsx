@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-
+import "../css/takeAttendance.css"
 
 export default function TakeAttendance() {
     const [classId, setClassId] = useState("1");
@@ -21,10 +21,12 @@ export default function TakeAttendance() {
         console.log(selectedFile);
     }
     return (
-        <div>
-            <label htmlFor="image">Upload Image</label>
-            <input accept="image/*" type="file" name="image" id="image_upload" files={selectedFile} onChange={(e) => { setSelectedFile(e.target.files); }} />
-            <button onClick={submitForm} >Submit</button>
+        <div className='main'>
+            <center>
+            <label htmlFor="image"><h1>Upload Image</h1></label>
+            <input className='inp' accept="image/*" type="file" name="image" id="image_upload" files={selectedFile} onChange={(e) => { setSelectedFile(e.target.files); }} />
+                <button className='fourth' onClick={submitForm} >Submit</button>
+                </center>
         </div>
     )
 }

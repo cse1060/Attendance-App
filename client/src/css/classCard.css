@@ -1,5 +1,5 @@
 h1 {
-    font-size: 5.25vmin;
+    font-size: 3.75vmin;
     text-align: center;
     color: white;
 }
@@ -10,13 +10,12 @@ p {
     color: rgb(255, 255, 255);
     margin-bottom: 1.5rem;
 }
-
 .wrap {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    width: 85vmin;
-    height: 25em;
+    width: 78vmin;
+    height: 20em;
     margin: 2rem auto;
     border: 8px solid;
     border-image: linear-gradient(-50deg, rgb(4, 1, 56), rgb(0, 15, 102), frgb(48, 34, 139) rgb(1, 38, 160), rgb(144, 163, 238), #00b4e6, rgb(0, 217, 255)) 1;
@@ -40,7 +39,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 15vmin;
+    width: 10vmin;
     height: 100%;
     padding: .5rem 0 0 .5rem;
     border: 3px solid;
@@ -58,7 +57,7 @@ p {
     top: 0;
     right: 0;
     width: 60vmin;
-    height: 100%;
+    height: 80%;
     background-image: url("https://images.pexels.com/photos/6044820/pexels-photo-6044820.jpeg?auto=compress&cs=tinysrgb&w=600");
     background-size: cover;
     transition: .3s ease-in-out;

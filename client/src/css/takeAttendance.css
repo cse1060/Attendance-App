@@ -1,0 +1,25 @@
+.fourth {
+  /* border-color: $yellow; */
+  border-color: var(--yellow); /* Assuming $yellow is a CSS variable */
+  color: #fff;
+  background: linear-gradient(45deg, var(--yellow) 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  width: 10rem;
+  transition: background 300ms ease-in-out;
+}
+
+.fourth:hover {
+  background-position: 0;
+}
+.inp{
+    width: 15%;
+}
+/* Assuming you have a CSS variable definition for yellow */
+:root {
+  --yellow: #fdd835;
+}
+.main{
+    margin-top: 20vh;
+    font-size: larger;
+}
